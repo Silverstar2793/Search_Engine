@@ -1,0 +1,41 @@
+body{
+    background-color: #f1f1f1;
+}
+
+
+.container{
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1{
+    text-align: center;
+}
+
+form{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+input[text]{
+    width: 70%;
+    padding: 12px 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button[type=submit]{
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+}
+
+button[type=submit]:hover{
+    background-color: #45a049;
+    transition: ease-in-out 0.3s;
+}

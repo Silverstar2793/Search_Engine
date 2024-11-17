@@ -1,0 +1,7 @@
+Flask
+nltk
+numpy
+tabulate
+colorama
+rapidfuzz
+spacy

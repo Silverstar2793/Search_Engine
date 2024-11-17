@@ -33,9 +33,30 @@ button[type=submit]{
     border-radius: 4px;
     background-color: #4CAF50;
     color: white;
+    cursor: pointer;
 }
 
 button[type=submit]:hover{
     background-color: #45a049;
     transition: ease-in-out 0.3s;
+}
+
+
+.results{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.result{
+    width: 50%;
+    margin-left: 20%;
+    margin-bottom: 20px;
+    padding: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    text-align: center;
+}
+
+h3{
+    margin-bottom: 20px;
 }

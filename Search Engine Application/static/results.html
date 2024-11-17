@@ -4,8 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Search Results</title>
+    <link rel="stylesheet" href="./static/style.css">
 </head>
 <body>
-    <p>The query was:{{data}}</p>
+    <div class="container">
+        <h1>Web Search Results</h1>
+        <form action="/websearch" method="POST">
+            <input type="text" placeholder="Enter your search query..." value = {{data[1]}} name="query">
+            <button type="submit">Search</button>
+        </form>
+        {%for item in data[0]%}
+        <div class="results">
+            <div class="result">
+                <h3>Result:
+                    <a href="{{item}}">{{item}}</a>
+                </h3>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
 </body>
 </html>

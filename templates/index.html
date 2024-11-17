@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Engine</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <h1>Search Engine</h1>
+    
+    <form class="search-form" method="POST">
+        <input type="text" name="query" class="search-input" value="{{ query_text }}" placeholder="Enter your search query...">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+
+    {% if corrections_made %}
+    <div class="corrections">
+        <p>Did you mean: {{ corrections_made|join(', ') }}</p>
+    </div>
+    {% endif %}
+    
+    {% if search_time is not none %}
+    <div class="search-stats">
+        <p>Search completed in <span class="search-time">{{ search_time }} ms</span></p>
+    </div>
+    {% endif %}
+
+    {% if results %}
+    <div class="results">
+        {% for doc_id, text, score in results %}
+        <div class="result">
+            <div class="doc-id">{{ doc_id }}</div>
+            <div class="text">{{ text | safe }}</div>
+            <div class="score">Relevance Score: {{ "%.4f"|format(score) }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% elif query_text %}
+    <p class="no-results">No results found for "<strong>{{ query_text }}</strong>". Please try another query.</p>
+    {% endif %}
+    
+</body>
+</html>
